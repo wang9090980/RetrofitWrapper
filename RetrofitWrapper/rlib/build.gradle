@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+ext {
+    retrofitVersion = "2.3.0"
+    converterGsonVersion = "2.0.2"
+    adapterRxjava2Version = "2.2.0"
+    okhttp3Version = "3.9.1"
+    rxjavaVersion = "2.1.8"
+    rxandroidVersion = "2.0.1"
+    retrofitUrlManager = "1.4.0"
+    gsonVersion = "2.8.2"
+    fastjsonVersion = "1.1.68.android"
+    supportVersion = "27.1.0"
+    multidexVersion = "1.0.3"
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Retrofit(https://github.com/square/retrofit)
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$converterGsonVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$adapterRxjava2Version"
+
+    // Okhttp3(https://github.com/square/okhttp)
+    api "com.squareup.okhttp3:okhttp:$okhttp3Version"
+
+    // Rxjava2(https://github.com/ReactiveX/RxJava)
+    api "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+
+    // RxAndroid(https://github.com/ReactiveX/RxAndroid)
+    api "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+
+    api "me.jessyan:retrofit-url-manager:$retrofitUrlManager"
+
+    // gson(https://github.com/google/gson)
+    api "com.google.code.gson:gson:$gsonVersion"
+
+    // fastjson(https://github.com/alibaba/fastjson)
+    api "com.alibaba:fastjson:$fastjsonVersion"
+
+    api "com.android.support:support-annotations:$supportVersion"
+
+    api "com.android.support:multidex:$multidexVersion"
+
+
+}
